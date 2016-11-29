@@ -69,7 +69,7 @@ def read_git_version():
         data, _ = proc.communicate()
         if proc.returncode:
             return None
-        ver = data.splitlines()[0].strip()
+        ver = data.splitlines()[0].strip().decode('utf-8')
     except:  # pylint: disable=bare-except
         return None
 
